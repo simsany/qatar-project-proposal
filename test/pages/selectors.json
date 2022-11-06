@@ -1,0 +1,7 @@
+{
+    "acceptCookiesBtn":".accept-btn",
+    "passengersSelectorDropdown":"app-review-packages-form > div:nth-child(2) > div > div:nth-child(2)",
+    "childAgeContainer":".children-age-selector-row .num-of-childs",
+    "increaseChildAgeBtn":"button.btn-increase.increase-child-age",
+    "decreaseChildAgeBtn":"button.btn-decrease.decrease-child-age"
+}
