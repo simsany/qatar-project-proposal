@@ -13,7 +13,7 @@ The example feature uses selenium webdriver to launch tests for frontend.
 1. Create a .env file with the necessary information that you can find in the
    .env.example file in the root directory
 
-2. To run the feature file
+2. To run the tests
 ```shell
  npm test
 ```
