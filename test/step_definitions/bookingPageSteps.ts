@@ -16,23 +16,23 @@ import {
 let page: BookingPage;
 setDefaultTimeout(TEST_TIMEOUT);
 
-BeforeAll(function () {
+BeforeAll(() => {
   page = new BookingPage();
 });
 
-Given("the booking page is open", async function () {
-  await page.open();
-  await page.acceptCookies();
-});
+Given("the booking page is open", async () => {
+    await page.open();
+    await page.acceptCookies();
+  });
 
-Given("the number of child passengers is set.", async function () {
-  await page.openNumberOfPassengersSelector();
-  await page.setNumberOfChildrenTo(DEFAULT_CHILDREN_PASSENGER_NUMBER);
-});
+Given("the number of child passengers is set.", async () => {
+    await page.openNumberOfPassengersSelector();
+    await page.setNumberOfChildrenTo(DEFAULT_CHILDREN_PASSENGER_NUMBER);
+  });
 
 Then(
   "the child passenger age selection should be available in the set number",
-  async function () {
+  async () => {
     const childrenAgeSelectorRows = await page.getChildrenAgeSelectorRows();
 
     return expect(childrenAgeSelectorRows.length).to.equal(
@@ -43,7 +43,7 @@ Then(
 
 Then(
   "the child passenger age selector value should be {int} by default",
-  async function (childAge) {
+  async (childAge) => {
     const firstChildAge = await page.getNthChildAge(
       DEFAULT_CHILDREN_PASSENGER_NUMBER
     );
@@ -54,7 +54,7 @@ Then(
 
 Then(
   "the {word} child passenger age button's availablilty should be {string}",
-  async function (type, isEnabled) {
+  async (type, isEnabled) => {
     const changeChildAgeBtn = await page.getChangeChildAgeBtn(type);
 
     return expect(isEnabled).to.equal(
@@ -63,21 +63,21 @@ Then(
   }
 );
 
-Then("the counter should display {int}", async function (childAge) {
-  const firstChildAge = await page.getNthChildAge(
-    DEFAULT_CHILDREN_PASSENGER_NUMBER
-  );
+Then("the counter should display {int}", async (childAge) => {
+    const firstChildAge = await page.getNthChildAge(
+      DEFAULT_CHILDREN_PASSENGER_NUMBER
+    );
 
-  return expect(Number(firstChildAge)).to.equal(childAge);
-});
+    return expect(Number(firstChildAge)).to.equal(childAge);
+  });
 
 When(
   "the user set the child pasenger age to {int}.",
-  async function (childAge) {
+  async (childAge) => {
     await page.setChildAgeTo(childAge);
   }
 );
 
-AfterAll(async function () {
+AfterAll(async () => {
   await page.driver.quit();
 });
