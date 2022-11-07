@@ -63,13 +63,6 @@ Then(
   }
 );
 
-When(
-  "the user set the child pasenger age to {int}.",
-  async function (childAge) {
-    await page.setChildAgeTo(childAge);
-  }
-);
-
 Then("the counter should display {int}", async function (childAge) {
   const firstChildAge = await page.getNthChildAge(
     DEFAULT_CHILDREN_PASSENGER_NUMBER
@@ -77,6 +70,13 @@ Then("the counter should display {int}", async function (childAge) {
 
   return expect(Number(firstChildAge)).to.equal(childAge);
 });
+
+When(
+  "the user set the child pasenger age to {int}.",
+  async function (childAge) {
+    await page.setChildAgeTo(childAge);
+  }
+);
 
 AfterAll(async function () {
   await page.driver.quit();
