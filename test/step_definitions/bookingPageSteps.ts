@@ -12,10 +12,8 @@ import {
   TEST_TIMEOUT,
   DEFAULT_CHILDREN_PASSENGER_NUMBER,
 } from "../data/constants";
-import { config } from "dotenv";
 
 let page: BookingPage;
-config();
 setDefaultTimeout(TEST_TIMEOUT);
 
 BeforeAll(function () {
