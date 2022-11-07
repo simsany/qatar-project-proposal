@@ -65,9 +65,12 @@ Then(
   }
 );
 
-When("the user set the child pasenger age to {int}.", async function (childAge) {
-  await page.setChildAgeTo(childAge);
-});
+When(
+  "the user set the child pasenger age to {int}.",
+  async function (childAge) {
+    await page.setChildAgeTo(childAge);
+  }
+);
 
 Then("the counter should display {int}", async function (childAge) {
   const firstChildAge = await page.getNthChildAge(
