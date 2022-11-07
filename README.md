@@ -32,4 +32,7 @@ To create documentation run
 npm run create-docs
 ```
 
-The documentation can be found in the docs folder in the root directory
+The documentation can be found at
+```shell
+test/docs
+```
