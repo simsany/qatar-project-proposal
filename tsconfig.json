@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-      "moduleResolution": "node",
-      "target": "ES2018",
-      "resolveJsonModule": true,
-      "esModuleInterop": true
-    }
+  "compilerOptions": {
+    "types": ["selenium-webdriver", "prettier","chai"],
+    "moduleResolution": "node",
+    "target": "ES2018",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  }
 }

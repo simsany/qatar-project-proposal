@@ -1,0 +1,14 @@
+{
+  "acceptCookiesBtn":".accept-btn",
+  "passengersSelectorDropdown":"app-review-packages-form > div:nth-child(2) > div > div:nth-child(2)",
+  "childAgeContainer":".children-age-selector-row .num-of-childs",
+  "changeChildAgeBtns":{
+    "increase":"button.btn-increase.increase-child-age",
+    "decrease":"button.btn-decrease.decrease-child-age"
+  },
+  "childrenAgeSelectorRow":".children-age-selector-row",
+  "changeChildrenNumberBtns":{
+    "increase":".btn-increase.increase-child",
+    "decrease":".btn-decrease.decrease-child"
+  }
+}
