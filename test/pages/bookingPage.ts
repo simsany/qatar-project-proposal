@@ -59,6 +59,9 @@ export class BookingPage {
    */
   open = async (): Promise<void> => {
     await this.driver.get(this.url);
+    await this.driver.wait(
+      until.elementLocated(By.css(selectors.passengersSelectorDropdown))
+    );
   };
 
   /**

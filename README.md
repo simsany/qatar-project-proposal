@@ -1,6 +1,6 @@
 # Purpose
 
-Setup an automated test framework using CucumberJS library with Typescript.
+Setup an automated test framework using CucumberJS with Typescript.
 The example feature uses selenium webdriver to launch tests for frontend.
 
 # Install
