@@ -1,3 +1,3 @@
-export const TEST_TIMEOUT = 15000;
+export const TEST_TIMEOUT = 25000;
 export const DEFAULT_CHILDREN_PASSENGER_NUMBER = 1;
 export const DEFAULT_CHILD_AGE = 2;

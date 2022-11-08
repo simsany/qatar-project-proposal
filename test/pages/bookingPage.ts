@@ -68,8 +68,8 @@ export class BookingPage {
    * @returns Promise<void>
    */
   click = async (selector: string): Promise<void> => {
-    const element = await this.driver.findElement(By.css(selector));
-
+    const element =this.driver.findElement(By.css(selector));
+    await this.driver.wait(until.elementIsEnabled(element))
     await element.click();
   };
 
@@ -190,7 +190,11 @@ export class BookingPage {
       const increaseNumberOfChildrenBtn = await this.driver.wait(
         until.elementIsEnabled(this.getChangeChildrenNumbersBtn("increase"))
       );
-      await increaseNumberOfChildrenBtn.click();
+
+      await this.driver.executeScript(
+        "arguments[0].click()",
+        increaseNumberOfChildrenBtn
+      );
     }
   };
 }

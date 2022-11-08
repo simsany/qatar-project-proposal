@@ -21,14 +21,14 @@ BeforeAll(() => {
 });
 
 Given("the booking page is open", async () => {
-    await page.open();
-    await page.acceptCookies();
-  });
+  await page.open();
+  await page.acceptCookies();
+});
 
 Given("the number of child passengers is set.", async () => {
-    await page.openNumberOfPassengersSelector();
-    await page.setNumberOfChildrenTo(DEFAULT_CHILDREN_PASSENGER_NUMBER);
-  });
+  await page.openNumberOfPassengersSelector();
+  await page.setNumberOfChildrenTo(DEFAULT_CHILDREN_PASSENGER_NUMBER);
+});
 
 Then(
   "the child passenger age selection should be available in the set number",
@@ -64,19 +64,29 @@ Then(
 );
 
 Then("the counter should display {int}", async (childAge) => {
-    const firstChildAge = await page.getNthChildAge(
-      DEFAULT_CHILDREN_PASSENGER_NUMBER
-    );
+  const firstChildAge = await page.getNthChildAge(
+    DEFAULT_CHILDREN_PASSENGER_NUMBER
+  );
 
-    return expect(Number(firstChildAge)).to.equal(childAge);
-  });
+  return expect(Number(firstChildAge)).to.equal(childAge);
+});
 
-When(
-  "the user set the child pasenger age to {int}.",
-  async (childAge) => {
-    await page.setChildAgeTo(childAge);
-  }
-);
+Then("the child age should be {int}", async (childAge) => {
+  const firstChildAge = await page.getNthChildAge(
+    DEFAULT_CHILDREN_PASSENGER_NUMBER
+  );
+
+  return expect(Number(firstChildAge)).to.equal(childAge);
+});
+
+When("the user set the child pasenger age to {int}.", async (childAge) => {
+  await page.setChildAgeTo(childAge);
+});
+
+When("the {word} child age button is clicked", async function (buttonType) {
+  const button = await page.getChangeChildAgeBtn(buttonType);
+  await button.click();
+});
 
 AfterAll(async () => {
   await page.driver.quit();
