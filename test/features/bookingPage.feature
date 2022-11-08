@@ -19,6 +19,7 @@ Feature: Passenger number selection
 
     
     Scenario Outline: The child passenger age change buttons should be enabled/disabled correctly
+    
         Given the booking page is open 
         And   the number of child passengers is set.
         When  the user set the child pasenger age to <age>.
