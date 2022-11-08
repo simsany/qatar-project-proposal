@@ -68,8 +68,8 @@ export class BookingPage {
    * @returns Promise<void>
    */
   click = async (selector: string): Promise<void> => {
-    const element =this.driver.findElement(By.css(selector));
-    await this.driver.wait(until.elementIsEnabled(element))
+    const element = this.driver.findElement(By.css(selector));
+    await this.driver.wait(until.elementIsEnabled(element));
     await element.click();
   };
 
